@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Nhấn vào nút</p>
+    <input type="number" name="" id="nhap">
+    <button onclick = "myFunction()">Try it</button>
+    <p id="demo">Kết quả là:</p>
+    <script>
+        function myFunction(){
+            var number=document.getElementById("nhap").value; // lấy gái trị của ô input nhập vào
+            var greeting;
+            if(number == 0){
+                greeting = "Bạn được 0 điểm";
+                document.getElementById("demo").style.color="red"; // đổi màu đỏ cho chữ 
+            } 
+            else if(number>0){
+                greeting = "Đó là số dương";
+                document.getElementById("demo").style.color="blue";
+            }
+            else{
+                greeting = "Đó là số âm";
+                document.getElementById("demo").style.color="yellow";
+            }
+            document.getElementById("demo").innerHTML=greeting;
+        }
+    </script>
+</body>
+</html>

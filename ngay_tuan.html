@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Nhap so ra ngay</p>
+    <input type="number" name="" id="nhap">
+    <button onclick="ngay_Tuan()">Try it</button>
+    <p id="kq"></p>
+    <script>
+        function ngay_Tuan(){
+            var number=parseInt(document.getElementById("nhap").value);
+            var day;
+            switch (number) {
+                case 1:
+                    day="Thứ Hai";
+                    document.getElementById("kq").innerHTML=day;
+                    break;
+                case 2:
+                    day="Thứ Ba";
+                    document.getElementById("kq").innerHTML=day;
+                    break;
+                case 3:
+                    day="Thứ Tư";
+                    document.getElementById("kq").innerHTML=day;
+                    break;
+                case 4:
+                    day="Thứ Năm";
+                    document.getElementById("kq").innerHTML=day;
+                    break;
+                case 5:
+                    day="Thứ Sáu";
+                    document.getElementById("kq").innerHTML=day;
+                    break;
+                case 6:
+                    day="Thứ Bảy";
+                    document.getElementById("kq").innerHTML=day;
+                    break;
+
+                case 7:
+                    day="Thứ CN";
+                    document.getElementById("kq").innerHTML=day;
+                    break;
+                }
+        }
+    </script>
+</body>
+</html>

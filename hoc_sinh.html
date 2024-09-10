@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+        html {
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            height: auto;
+            background-color: white;
+            box-shadow: 0px 2px 5px black;
+        }
+
+        form {
+            padding: 20px;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        .nut {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        #kq {
+            display: inline;
+            text-align: center;
+            padding: 5px 30px;
+            margin-left: 4px;
+            border-radius: 3px;
+            background-color: white;
+            border: 1px solid rgb(106, 105, 105);
+        }
+
+        #year {
+            margin-left: 40px;
+        }
+
+        #danhHieu{
+            font-size: 20px;
+            text-align: center;
+        }
+
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <form action>
+                <p class="title"><h2>BANG DIEM CUA EM</h2></p>
+                <p>Semester1 <input type="number" name value id="semester1"></p>
+                <p>Semester2 <input type="number" name value id="semester2"></p>
+                <p>Year:
+                    <select name id="year">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </p>
+
+                <span>Sumaries:</span>
+                <input type="text" id="kq" placeholder="Kết quả là">
+                <div class="hiendanhhieu">
+                    <p id="danhHieu"></p>
+                </div>
+
+                <script>
+                function tinhDiem() {
+                    var diemky1 = parseFloat(document.getElementById("semester1").value);
+                    var diemky2 = parseFloat(document.getElementById("semester2").value);
+                    var nam = document.getElementById("year");
+                    var value = parseInt(nam.options[nam.selectedIndex].value);
+                    var ketqua;
+
+                    if (value === 1) {
+                        ketqua = (diemky1 + (diemky2 * 2)) / 3;
+                    } else if (value === 2) {
+                        ketqua = ((diemky1 * 2) + (diemky2 * 3)) / 5;
+                    } else if (value === 3) {
+                        ketqua = ((diemky1 * 3) + (diemky2 * 4)) / 7;
+                    }
+
+                    ketqua = parseFloat(ketqua);
+                    document.getElementById("kq").value = ketqua;
+
+
+                    if (ketqua >= 9) {
+                        document.getElementById("danhHieu").innerHTML = "Học sinh giỏi";
+                        document.getElementById("danhHieu").style.color = "black";
+                    } else if (ketqua >= 7 && ketqua < 9) {
+                        document.getElementById("danhHieu").innerHTML = "Học sinh khá";
+                        document.getElementById("danhHieu").style.color = "black";
+                    } else if (ketqua >= 5 && ketqua < 7) {
+                        document.getElementById("danhHieu").innerHTML = "Học sinh TB";
+                        document.getElementById("danhHieu").style.color = "black";
+                    }
+                }
+
+                function huytatca() {
+                    document.getElementById("semester1").value = '';
+                    document.getElementById("semester2").value = '';
+                    document.getElementById("kq").value = '';
+                    document.getElementById("danhHieu").innerHTML = '';
+                }
+            </script>
+                <div class="nut">
+                    <button type="button" onclick="tinhDiem()">Ok</button>
+                    <button type="button" onclick="huytatca()">Cancel</button>
+                </div>
+
+            </form>
+        </div>
+    </body>
+</html>
