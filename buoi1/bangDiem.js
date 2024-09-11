@@ -5,11 +5,11 @@ function tinhDiem() {
     var value = parseInt(nam.options[nam.selectedIndex].value);
     var ketqua;
 
-    if (value === 1) {
+    if (value == 1) {
         ketqua = (diemky1 + (diemky2 * 2)) / 3;
-    } else if (value === 2) {
+    } else if (value == 2) {
         ketqua = ((diemky1 * 2) + (diemky2 * 3)) / 5;
-    } else if (value === 3) {
+    } else if (value == 3) {
         ketqua = ((diemky1 * 3) + (diemky2 * 4)) / 7;
     }
 
