@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="clothes.css">
+    <title>Product</title>
+</head>
+<body>
+    <div class="container">
+        <!-- start infor -->
+         <p class="title">Clothes</p>
+        <div class="infor">
+            <div class="infor-detail">
+                <p>Product Name</p>
+                <input type="text" id="name-input" >
+            </div>
+
+            <div class="infor-detail">
+                <p>Product Quantity</p>
+                <input type="number" id="quantity-input" >
+            </div>
+            
+            <div class="infor-detail">
+                <p>Product Price</p>
+                <input type="number" id="price-input" >
+            </div>
+        </div>
+        <!-- end infor -->
+        <script src="clothes.js"></script>
+         <!-- start button -->
+        <div class="button">
+            <button type="button" onclick="Add()">Add</button>
+        </div>
+        <!-- end button -->
+
+        <table id="tbl">
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Sub-total</th>
+            </tr>
+            <tr>
+                <td colspan="4">Total</td>
+                <td id="total">$0.00</td>
+            </tr>
+        </table>
+    </div>
+    <!-- end container -->
+</body>
+</html>
